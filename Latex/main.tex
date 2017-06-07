@@ -1,8 +1,53 @@
-\documentclass{article}
-\title{Title}
-\author{Your Name}
+\documentclass[12pt]{article}
+% pre\'ambulo
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,activeacute]{babel}
+\usepackage{mathtools}
+\usepackage{url}
+\usepackage{tikz}
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+\usetikzlibrary{arrows,positioning}
+\tikzset{
+    %Define standard arrow tip
+    >=stealth',
+    %Define style for boxes
+    punkt/.style={
+           rectangle,
+           rounded corners,
+           draw=black, very thick,
+           text width=5em,
+           minimum height=4em,
+           text centered},
+    % Define arrow style
+    pil/.style={
+           ->,
+           thick,
+           shorten <=2pt,
+           shorten >=2pt,}
+}
+\usepackage[style=numeric-comp,backend=bibtex]{biblatex}
+\bibliography{refs.bib}
+
+\title{Modelo de Actores como Modelo de Agentes}
+\author{Sergio Rodr\'iguez Calvo}
+\date{Junio de 2017}
+
+
 \begin{document}
-\maketitle{}
-\section{Introduction}
+    \maketitle
+    \thispagestyle{empty}
+    \begin{center}
+      Departamento de Ciencias de la Computaci\'on e
+      Inteligencia Artificial \\
+      Universidad de Sevilla
+      \end{center}
+  % cuerpo del documento
+  % abstract
+  \bf{Abstract. }\rm
+    \emph{En el presente trabajo se presentan el modelo de acotres y el modelo de agentes
+    realizando una comparaci'on y un an'alisis de similitudes.}
+\section{Introducci'on}
 This is where you will write your content.
 \end{document}
