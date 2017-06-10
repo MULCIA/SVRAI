@@ -100,12 +100,12 @@ Lorem ipsum.
 Lorem ipsum.
 \section{Modelo de Actores}
 \label{sec:modelos de actores}
-En la construci'on de sistemas de informaci'n se plantea un nuevo mundo, un mundo en el cual
+En la construcci'on de sistemas de informaci'on se plantea un nuevo mundo, un mundo en el cual
 las aplicaciones tengan una alta capacidad de respuesta. Se necesita mantener la atenci'on y el
 inter'es de los usuarios que acceden a ellos.
 
 Las diferencias entre estos dos mundos, el mundo que conocemos hasta ahora y el que se plantea
-desde hace ya unos años, cuenta con las siguientes diferencias:
+desde hace ya unos a'nos, cuenta con las siguientes diferencias:
 
 \begin{itemize}
 	\item Una 'unica computadora frente a un cluster de computadores.
@@ -127,12 +127,50 @@ Esta idea puede ser llevada m'as all'a gracias a una implementaci'on adecuada de
 que permita construir sistemas distribuidos siguiendo un modelo de actores y que a su vez
 sea fiel al manifiesto reactivo. No s'olo es una mejora, si no que se hace necesario dado
 el entorno en el que se desarrolla y se pretende ejecutar, un computador.
+
 \subsection{Qu'e es un actor}
 \label{sub:que es un actor}
-Lorem ipsum.
+Un actor es la primitiva universal de concurrencia dentro del modelo de actores. Esto es,
+un bloque de c'odigo por el que pasa un hilo de ejecuci'on cada vez siempre y cuando
+tenga un mensaje pendiente.
+
+Su topolog'ia consta de un buz'on o cola de mensajes, y el propio actor. Un actor consulta su
+buz'on para comprobar si existe en el mensajes pendientes y en funci'on de un dispatcher, elemento
+que da paso al actor para que se ejecute, extrae el mensaje y ejecuta la acci'on para la que
+esta programado. Una vez finaliza su ejecuci'on, y dependiendo de la operativa, devolver'a una
+respuesta, o realizar'a otras acciones tales como reenviar el mensaje, crear otro actor
+para delegar en 'el, entre otras.
+
+Un actor no debe guardar estados, ya que en caso de que un mensaje por alg'un motivo
+volviera a encolarse en el buz'on, el actor ha podido procesar otros mensajes previamente
+que han podido dejar el estado de forma que no permita alcanzar el resultado esperado, teniendo
+por tanto un efecto no deseado.
+
 \subsection{Sistemas distribuidos}
 \label{sub:sistemas distribuidos}
-Lorem ipsum.
+Un sistema distribuido se define como un conjunto de computadores conectados entre s'i. Esto
+es la soluci'on para poder construir sistemas reactivos.
+
+En un primer momento, los procesadores, construidos con la conocida como tecnolog'a del
+silicio, iban doblando su potencia cada 18 meses. Esto es lo que se conoce como Ley de Moore.
+Por ello, y gracias tambi'en al avaratamiento de la tecnolog'ia y al aumento de la capacidad de
+almacenamiento f'isico y de memoria RAM, no era necesario una alternativa a la construci'on de sistemas
+monol'iticos, es decir, sistemas desplegados en un 'unico computador y que contara con
+todos los servicios.
+
+Tampoco la sociedad utilizaba internet y los sistemas web para tantas tareas como ahora, por lo
+que con un 'unico sistema monol'itico y un computador con suficiente recursos (potencia y memoria)
+era suficiente.
+
+A lo largo de los años se ha ido alcanzando los l'imites de la tecnolog'ia y nuevos paradigmas o
+enfoques han ido surgiendo. Por ejemplo, casi simult'aneamente a los sistemas distribuidos se
+hizo necesario duplicar el numero de procesadores. Es decir, contar con varios n'ucleos de
+procesamiento en un mismo procesador.
+
+Los sistemas distribuidos, por tanto, suponen llevar m'as all'a el enfoque aplicado con el enfoque
+multin'ucleo, y aplicarlo tambi'en a nivel de computadores aprovechando las redes de comunicaciones
+existentes entre ellos.
+
 \subsection{Manifiesto Reactivo}
 \label{sub:manifiesto reactivo}
 El manifiesto reactivo es un documento en el que se recoge los principios que debe
@@ -153,8 +191,8 @@ Estos principios son los siguientes:
     si no que el estado es el mensaje. Puede verse como un sistema orientado a eventos u 'ordenes.
 \end{itemize}
 
-\subsection{Rol de los actores en sistemas distribuidos}
-\label{sub:rol de los actores en sistemas distribuidos}
+\subsection{Rol de los actores en sistemas distribuidos (y reactivos)}
+\label{sub:rol de los actores en sistemas distribuidos y reactivos}
 Lorem ipsum.
 \subsection{Capacidad racional en actores}
 \label{sub:capacidad racional en actores}
