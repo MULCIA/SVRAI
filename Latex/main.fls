@@ -243,6 +243,7 @@ INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/lm/ec-lmr17.tfm
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/lm/ec-lmbx12.tfm
 OUTPUT main.pdf
 INPUT /usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map
+INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/lm/ec-lmbx12.tfm
 INPUT main.aux
 INPUT main.run.xml
 OUTPUT main.run.xml
