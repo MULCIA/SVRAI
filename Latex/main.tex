@@ -100,12 +100,6 @@ Lorem ipsum.
 Lorem ipsum.
 \section{Modelo de Actores}
 \label{sec:modelos de actores}
-Lorem ipsum.
-\subsection{Qu'e es un actor}
-\label{sub:que es un actor}
-Lorem ipsum.
-\subsection{Sistemas distribuidos}
-\label{sub:sistemas distribuidos}
 En la construci'on de sistemas de informaci'n se plantea un nuevo mundo, un mundo en el cual
 las aplicaciones tengan una alta capacidad de respuesta. Se necesita mantener la atenci'on y el
 inter'es de los usuarios que acceden a ellos.
@@ -122,6 +116,41 @@ desde hace ya unos años, cuenta con las siguientes diferencias:
     \item Baja concurrencia de usuarios frente a alta concurrencia.
     \item Conjunto peque'no de datos frente a grandes conjuntos de datos.
     \item Latencia en segundos frente a latencia en milisegundos.
+\end{itemize}
+
+El modelo de actores fue creado en 1973 por Carl Hewitt y consiste en un modelo
+matem'atico de computaci'on concurrente cuya primitiva universal es el actor. Un actor es
+una proci'on de c'odigo software que puede ejecutarse m'ultiples veces, e incluso,
+de forma paralela.
+
+Esta idea puede ser llevada m'as all'a gracias a una implementaci'on adecuada de un toolkit
+que permita construir sistemas distribuidos siguiendo un modelo de actores y que a su vez
+sea fiel al manifiesto reactivo. No s'olo es una mejora, si no que se hace necesario dado
+el entorno en el que se desarrolla y se pretende ejecutar, un computador.
+\subsection{Qu'e es un actor}
+\label{sub:que es un actor}
+Lorem ipsum.
+\subsection{Sistemas distribuidos}
+\label{sub:sistemas distribuidos}
+Lorem ipsum.
+\subsection{Manifiesto Reactivo}
+\label{sub:manifiesto reactivo}
+El manifiesto reactivo es un documento en el que se recoge los principios que debe
+tener en cuenta todo sistema que pretenda ser reactivo. Esto es, ser flexible, con bajo
+acoplamiento y escalables.
+
+Estos principios son los siguientes:
+
+\begin{itemize}
+	\item Responsividad: Los sistemas responden de forma adecuada. Se requiere de tiempos
+    de respuesta r'apidos y consistentes.
+	\item Resilencia: Los sistemas permanecen responsivos incluso en situaci'on de fallo.
+    Entendiendo esto como alta disponibilidad. Esto ocurre gracias a la replicaci'on, contenci'on,
+    aislamiento y la delegaci'on.
+	\item Elasticidad: Los sistemas permanecen responsivos incluso ante variaciones de alta
+    carga de trabajo.
+	\item Orientaci'on a mensajes: Los sistemas reactivos intercambian mensaje. No mantienen estados,
+    si no que el estado es el mensaje. Puede verse como un sistema orientado a eventos u 'ordenes.
 \end{itemize}
 
 \subsection{Rol de los actores en sistemas distribuidos}
