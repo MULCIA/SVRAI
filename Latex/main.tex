@@ -47,17 +47,17 @@
   % abstract
   \bf{Abstract. }\rm
     \emph{En el presente trabajo se muestran dos modelos que tienen similitudes
-    pero que aplican en entornos distintos, estos son el modelo de agentes y
+    pero que aplican en mundos distintos, estos son el modelo de agentes y
     el modelo de actores. El primero de ellos, el modelo de agentes, consiste en
     un conjunto de componentes, iguales o diferentes entre ellos, que actuan de forma
     racional y, en conjunto, tienen un comportamiento complejo. El segundo de ellos,
-    el modelo de actores, aplica en el mundo de la informaci'on, es decir, se ejecutan
-    en computadores y se comunican entre ellos realizando cada uno peque'nas tareas,
+    el modelo de actores, aplica en el mundo virtual o de la informaci'on, es decir,
+    se ejecutan en computadores y se comunican entre ellos realizando cada uno peque'nas tareas,
     permitiendo que los sistemas sean robustos, escalables y tolerantes a fallos.}
 \section{Introducci'on}
 En la naturaleza a menudo se observan comportamientos complejos y, en muchos casos,
 pueden llegar a considerarse ciertamente inteligentes. Al realizar un estudio en profundidad
-de los mismos se aprecia como el sistema se compone de seres, individuos o agentes cuya operativa
+de los mismos se aprecia como el sistema se compone de seres, individuos o entes cuya operativa
 es muy simple. Un ejemplo de ello lo tenemos en una colonia de hormigas, el cual es un
 sistema complejo que resuelve problemas de envergadura, sin embargo, los individuos de
 una colonia de hormigas son insectos que tienen labores espec'ificas y que aplican en
@@ -79,19 +79,35 @@ se necesita construir sistemas que tengan gran capacidad, que sean escalables y 
 en funci'on de la carga que soporte el sistema en cada momento, y que tambi'en sean tolerantes
 a fallos, siendo incluso capaces de saber reponerse en caso de que se produzcan errores o fallos.
 
-De todo ello, ha surgido una corriente que busca construir sistemas en pequeños componentes. E incluso,
-que esos pequeños componentes sean descritos como pequeños agentes de la informaci'on con tareas simples,
+De todo ello, ha surgido una corriente que busca construir sistemas en peque'nos componentes. E incluso,
+que esos peque'nos componentes sean descritos como peque'nos agentes de la informaci'on con tareas simples,
 que en conjunto componen un sistema que realiza tareas con muy buen rendimiento. Se le conoce como modelo de
-actores, y consiste en pequeños trozos de c'odigo software que ante la llegada de un mensaje realizan
+actores, y consiste en peque'nos trozos de c'odigo software que ante la llegada de un mensaje realizan
 una tarea, y finalmente, devuelven un resultado.
 
-Todo esto no es nuevo, si no que supone aprovechar un modelo que se creo en la decada de los 80, y
+Todo esto no es nuevo, si no que supone aprovechar un modelo que se creo en la decada de los 70, y
 que es ampliamente aplicado desde entonces en el mundo de las comunicaciones. Consiste en un
-modelo matem'atico que resuleve muy bien problemas como los descritos previamente.
+modelo matem'atico que resuleve muy bien problemas de alta concurrencia.
 
 \section{Modelo de Agentes}
 \label{sec:modelo de agentes}
-Lorem ipsum.
+De cara a cumplir con el objetivo de este trabajo, que consiste en plantear
+un modelo de actores como un modelo de actores en el cual los actores
+tengan capacidad racional, previamente es necesario definir qu'e es un
+modelo de agentes.
+
+No existe una definici'on 'unica de qu'e es un modelo de actores, al igual que ocurre en
+todas las areas de la Inteligencia Artificial. Aqu'i se va considerar la definici'on
+propuesta por Rusell \& Norvig \cite{AI-Russell&Norvig}:
+
+\begin{quote}
+\emph{Dada una sucesi'on de percepciones, un agente racional ideal debe realizar
+una acci'on que maximice la medida de 'exito, a partir de las evidencias que obtiene
+de dicha sucesi'on y del conocimiento que posee.}
+\end{quote}
+
+A continuaci'on, se describe con m'as detalle qu'e es un agente, as'i como su capacidad racional.
+
 \subsection{Qu'e es un agente}
 \label{sub:que es un agente}
 Un agente inteligente, o agente racional, es una entidad que percibe su entorno, realiza
@@ -119,8 +135,8 @@ Lorem ipsum.
 \section{Modelo de Actores}
 \label{sec:modelos de actores}
 En la construcci'on de sistemas de informaci'on se plantea un nuevo mundo, un mundo en el cual
-las aplicaciones tengan una alta capacidad de respuesta. Se necesita mantener la atenci'on y el
-inter'es de los usuarios que acceden a ellos.
+las aplicaciones tengan una alta capacidad de respuesta, es decir, que estas sean altamente concurrentes.
+Esto se debe a que se necesita mantener la atenci'on y el inter'es de los usuarios que acceden a ellos.
 
 Las diferencias entre estos dos mundos, el mundo que conocemos hasta ahora y el que se plantea
 desde hace ya unos a'nos, cuenta con las siguientes diferencias:
@@ -137,7 +153,7 @@ desde hace ya unos a'nos, cuenta con las siguientes diferencias:
 \end{itemize}
 
 El modelo de actores fue creado en 1973 por Carl Hewitt y consiste en un modelo
-matem'atico de computaci'on concurrente cuya primitiva universal es el actor. Un actor es
+matem'atico de computaci'on concurrente cuya primitiva universal es el actor. En este caso, un actor es
 una proci'on de c'odigo software que puede ejecutarse m'ultiples veces, e incluso,
 de forma paralela.
 
@@ -180,7 +196,7 @@ Tampoco la sociedad utilizaba internet y los sistemas web para tantas tareas com
 que con un 'unico sistema monol'itico y un computador con suficiente recursos (potencia y memoria)
 era suficiente.
 
-A lo largo de los años se ha ido alcanzando los l'imites de la tecnolog'ia y nuevos paradigmas o
+A lo largo de los a'nos se ha ido alcanzando los l'imites de la tecnolog'ia y nuevos paradigmas o
 enfoques han ido surgiendo. Por ejemplo, casi simult'aneamente a los sistemas distribuidos se
 hizo necesario duplicar el numero de procesadores. Es decir, contar con varios n'ucleos de
 procesamiento en un mismo procesador.
@@ -215,11 +231,13 @@ Lorem ipsum.
 \subsection{Capacidad racional en actores}
 \label{sub:capacidad racional en actores}
 Lorem ipsum.
-\section{Ventajas e Inconvenientes}
+\section{Ventajas e Inconvenientes en el uso de actores}
 \label{sec:ventajas e inconvenientes}
 Lorem ipsum.
 \section{Conclusi'on}
 Lorem ispum.
-\section{Referencias}
-Lorem ispum.
+
+% bibliography
+\printbibliography
+
 \end{document}

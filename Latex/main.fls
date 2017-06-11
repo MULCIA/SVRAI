@@ -217,6 +217,9 @@ INPUT /usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
 INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 OUTPUT main-blx.bib
+INPUT main.bbl
+INPUT main.bbl
+INPUT main.bbl
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/lm/ec-lmr17.tfm
 INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/lm/ec-lmr12.tfm
 INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/lm/ot1lmr.fd
