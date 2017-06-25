@@ -41,5 +41,22 @@
     \field{title}{Artificial Intelligence: A Modern Approach}
     \field{year}{1995}
   \endentry
+
+  \entry{kind-of-agents}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=W}{%
+         family={Wikipedia.},
+         family_i={W\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{W1}
+    \strng{fullhash}{W1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{W}
+    \field{sortinithash}{W}
+  \field{howpublished}{\url{https://es.wikipedia.org/wiki/Agente_inteligente_(inteligencia_artificial)}}
+    \field{title}{Tipos de agentes}
+  \endentry
 \endsortlist
 \endinput

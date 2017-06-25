@@ -51,7 +51,7 @@
     el modelo de actores. El primero de ellos, el modelo de agentes, consiste en
     un conjunto de componentes, iguales o diferentes entre ellos, que actuan de forma
     racional y, en conjunto, tienen un comportamiento complejo. El segundo de ellos,
-    el modelo de actores, aplica en el mundo virtual o de la informaci'on, es decir,
+    el modelo de actores, aplica en el mundo virtual o de la informaci'on exclusivamente, es decir,
     se ejecutan en computadores y se comunican entre ellos realizando cada uno peque'nas tareas,
     permitiendo que los sistemas sean robustos, escalables y tolerantes a fallos.}
 \section{Introducci'on}
@@ -62,7 +62,8 @@ es muy simple. Un ejemplo de ello lo tenemos en una colonia de hormigas, el cual
 sistema complejo que resuelve problemas de envergadura, sin embargo, los individuos de
 una colonia de hormigas son insectos que tienen labores espec'ificas y que aplican en
 todos los casos sea cuales sean las circustancias. Es un sistema que cuenta con distintos
-tipos de agentes, hormigas en este caso, y cada una de ellas tiene un enfoque o una labor diferente.
+tipos de agentes por grupos, hormigas en este caso, y cada grupo tiene un enfoque
+o una labor diferente.
 
 No se puede decir que una hormiga sea inteligente, o al menos, no tiene un grado elevado de la misma.
 En esencia, consiste en unos sentidos muy b'asicos mediante los cuales percibe el entorno y
@@ -86,18 +87,18 @@ actores, y consiste en peque'nos trozos de c'odigo software que ante la llegada 
 una tarea, y finalmente, devuelven un resultado.
 
 Todo esto no es nuevo, si no que supone aprovechar un modelo que se creo en la decada de los 70, y
-que es ampliamente aplicado desde entonces en el mundo de las comunicaciones. Consiste en un
+que es ampliamente aplicado desde entonces en el mundo de las telecomunicaciones. Consiste en un
 modelo matem'atico que resuleve muy bien problemas de alta concurrencia.
 
 \section{Modelo de Agentes}
 \label{sec:modelo de agentes}
 De cara a cumplir con el objetivo de este trabajo, que consiste en plantear
-un modelo de actores como un modelo de actores en el cual los actores
-tengan capacidad racional, previamente es necesario definir qu'e es un
+un modelo de actores como un modelo de agentes en el cual los actores
+tengan capacidad racional, previamente es necesario definir e introduccir qu'e es un
 modelo de agentes.
 
-No existe una definici'on 'unica de qu'e es un modelo de actores, al igual que ocurre en
-todas las areas de la Inteligencia Artificial. Aqu'i se va considerar la definici'on
+No existe una definici'on 'unica de qu'e es un modelo de agentes, al igual que ocurre en
+todas las areas de la Inteligencia Artificial. Pero, aqu'i se va considerar la definici'on
 propuesta por Rusell \& Norvig \cite{AI-Russell&Norvig}:
 
 \begin{quote}
@@ -115,9 +116,9 @@ un precsamiento sobre dicha percepci'on, y actua en consecuencia en el mismo ent
 
 Se dice que un agente es inteligente cuando realiza una acci'on sobre su entorno de forma racional,
 entendi'endose racional como correcta o beneficiosa. En muchas ocasiones se busca una
-maximiazaci'on con la obtenci'on del resultado.
+maximizaci'on con la obtenci'on del resultado.
 
-Un agente puede ser f'isico o virtual, y posteriormente se presenta un ejemplo de agente virtual,
+Un agente puede ser f'isico o virtual. Posteriormente se presentar'a un ejemplo de agente virtual,
 conocido como actor.
 
 Como resumen, podemos decir que un agente debe cumplir las siguiente caracter'isticas:
@@ -129,17 +130,64 @@ Como resumen, podemos decir que un agente debe cumplir las siguiente caracter'is
 	\item Ayuda a alcanzar el objetivo com'un a todos los agentes que componen el sistema.
 \end{itemize}
 
+Seg'un su comportamiento, los agentes se pueden clasificar en 6 tipos diferentes \cite{kind-of-agents}, estos son:
+
+\begin{itemize}
+	\item Agentes reactivos.
+	\item Agentes reactivos basados en modelo.
+	\item Agentes basados en objetivos.
+	\item Agentes basados en su utilidad.
+    \item Agentes que aprenden.
+    \item Agentes de consultas.
+\end{itemize}
+
+Dado el tipo de arquitecturas que se necesitan hoy d'ia para cumplir una serie de criterios que garanticen
+que los sistemas son altamente concurrentes, el tipo de agente que nos interesa a partir de aqu'i son los
+agentes reactivos.
+
+Dependiendo del diseño del sistema, que se describe en el siguiente cap'itulo, los actores a utilizar son
+los de tipo reactivo. Pueden incluso estar basados en modelo. Se necesita que el agente, en nuestro caso, como se ver'a
+posteriormente, un actor reactivo porque debe responder a cambios. Generalmente, no se necesitan actores que deban
+conseguir cumplir objetivos propios.
+
+Tambi'en cabe destacar que los actores tendr'an un comportamiento social, entendido como que un actor t'ipicamente
+necesitar'a de otro para completar una tarea.
+
+Pero antes de entrar en detalle con el modelo de actores, así como, el estudio de la capadidad racional de los mismos,
+se presenta la capacidad racional en agentes cl'asicos.
+
 \subsection{Capacidad racional en agentes}
 \label{sub:capacidad racional en agentes}
-Lorem ipsum.
+El objetivo es conseguir un agente que razone adecuadamente seg'un el medio en el que se encuentre y conseguir dos cosas:
+
+\begin{itemize}
+	\item Poder medir en qu'e grado logra ser racional.
+	\item Cumplir con el Principio de Racionalidad Restringida de Herbert Simon.
+\end{itemize}
+
+En el primer punto, las medidas de rendimiento de un agente pueden variar seg'un el agente, e incluso, no saber que hacer,
+engañarse a s'i mismo, etc. Deben ser adecuadas para cada tipo de agente y al entorno en el que va a actuar.
+
+El segundo punto, se debe conocer en qu'e consiste la racionalidad, y en este caso la misma depende de 4 factores:
+
+\begin{itemize}
+	\item Medir el rendimiento que define el 'exito.
+	\item Conocimiento del medio en el que se encuentra el agente.
+	\item Acciones que el agente puede ejecutar.
+	\item Secuencia de percepciones del agente.
+\end{itemize}
+
+Un agente, por tanto, tiene que maximizar su rendimiento, para actuar de manera correcta, teniendo en cuenta las
+percepciones recibidas hasta ese momento.
+
 \section{Modelo de Actores}
 \label{sec:modelos de actores}
-En la construcci'on de sistemas de informaci'on se plantea un nuevo mundo, un mundo en el cual
+En la construcci'on de sistemas de informaci'on se plantea un nuevo mundo, en el cual
 las aplicaciones tengan una alta capacidad de respuesta, es decir, que estas sean altamente concurrentes.
 Esto se debe a que se necesita mantener la atenci'on y el inter'es de los usuarios que acceden a ellos.
 
 Las diferencias entre estos dos mundos, el mundo que conocemos hasta ahora y el que se plantea
-desde hace ya unos a'nos, cuenta con las siguientes diferencias:
+desde hace unos pocos a'nos, cuenta con las siguientes diferencias:
 
 \begin{itemize}
 	\item Una 'unica computadora frente a un cluster de computadores.
@@ -152,33 +200,48 @@ desde hace ya unos a'nos, cuenta con las siguientes diferencias:
     \item Latencia en segundos frente a latencia en milisegundos.
 \end{itemize}
 
-El modelo de actores fue creado en 1973 por Carl Hewitt y consiste en un modelo
+Este modelo, el modelo de actores, fue creado en 1973 por Carl Hewitt y consiste en un modelo
 matem'atico de computaci'on concurrente cuya primitiva universal es el actor. En este caso, un actor es
 una proci'on de c'odigo software que puede ejecutarse m'ultiples veces, e incluso,
 de forma paralela.
 
 Esta idea puede ser llevada m'as all'a gracias a una implementaci'on adecuada de un toolkit
 que permita construir sistemas distribuidos siguiendo un modelo de actores y que a su vez
-sea fiel al manifiesto reactivo. No s'olo es una mejora, si no que se hace necesario dado
+sea fiel al manifiesto reactivo. Pero, no s'olo es una mejora, si no que se hace necesario dado
 el entorno en el que se desarrolla y se pretende ejecutar, un computador.
+
+Seguir el manifiesto reactivo ayuda a optimizar los recursos, lo que unido al modelo de actores
+resulta en una combinaci'on necesaria para cumplir con el objetivo de concurrencia y alta capacidad
+de respuesta.
+
+Existen muchos toolkits o frameworks que implementan este modelo o la mayor parte de 'el. Uno de uso
+muy extendido es Akka, construido sobre la JVM y que permite ser utilizado tanto en Java como en Scala.
+Una muy buena combinaci'on se obtiene utilizando programaci'on funcional, la cual tiene numerosas
+ventajas frente a paradigmas como orientado a objeto, pero que no se comentan aqu'i al no estar
+dentro del objetivo de este documento.
 
 \subsection{Qu'e es un actor}
 \label{sub:que es un actor}
-Un actor es la primitiva universal de concurrencia dentro del modelo de actores. Esto es,
-un bloque de c'odigo por el que pasa un hilo de ejecuci'on cada vez siempre y cuando
-tenga un mensaje pendiente.
+Un actor, como se ha comentado previamente,  es la primitiva universal de concurrencia
+dentro del modelo de actores. Esto es, un bloque de c'odigo por el que pasa un hilo de
+ejecuci'on siempre y cuando tenga un mensaje pendiente.
 
-Su topolog'ia consta de un buz'on o cola de mensajes, y el propio actor. Un actor consulta su
-buz'on para comprobar si existe en el mensajes pendientes y en funci'on de un dispatcher, elemento
-que da paso al actor para que se ejecute, extrae el mensaje y ejecuta la acci'on para la que
-esta programado. Una vez finaliza su ejecuci'on, y dependiendo de la operativa, devolver'a una
-respuesta, o realizar'a otras acciones tales como reenviar el mensaje, crear otro actor
-para delegar en 'el, entre otras.
+Su topolog'ia consta de un buz'on o cola de mensajes, y el propio actor (c'odigo). Existe un dispatcher
+que es el responsable de dar paso a un actor con la entrega de un mensaje del buz'on.
+En ese caso, el actor ejecuta la acci'on para la que est'a programado. Una vez finaliza su
+ejecuci'on, y dependiendo de la operativa, devolver'a una respuesta, o realizar'a otras acciones,
+tales como reenviar el mensaje, crear otro actor para delegar en 'el, etc.
 
-Un actor no debe guardar estados, ya que en caso de que un mensaje por alg'un motivo
-volviera a encolarse en el buz'on, el actor ha podido procesar otros mensajes previamente
-que han podido dejar el estado de forma que no permita alcanzar el resultado esperado, teniendo
-por tanto un efecto no deseado.
+Un actor no debe guardar estados, ya que  varios hilos de ejecuci'on pasar'an por el actor,
+y en caso de que llegue un mensaje que dependa de un mensaje anterior, el actor podr'ia haber procesado
+ otros mensajes previamente que han podido dejar el estado de forma que no permita alcanzar el resultado
+ esperado, teniendo por tanto un efecto no deseado.
+
+Es f'acilmente distribuir actores, ya que al ser un paradigma orientado a mensajer'ia, no es
+importante el contexto de ejecuci'on, todo su contexto viene dado por el propio mensaje. Existe en
+muchos frameworks o toolkits que implementan un modelo de actores la figura del enrutador, que es
+la parte del toolkits que permite alojar los actores en m'aquinas remotas facilitando el balanceo de
+carga y facilitando tambi'en el aumento de la capacidad de un sistema de forma din'amica.
 
 \subsection{Sistemas distribuidos}
 \label{sub:sistemas distribuidos}
@@ -225,15 +288,95 @@ Estos principios son los siguientes:
     si no que el estado es el mensaje. Puede verse como un sistema orientado a eventos u 'ordenes.
 \end{itemize}
 
+En este tipo de paradigma, aplicar el manifiesto reactivo se hace necesario, ya que presenta
+numerosas ventajas, como por ejemplo, mejor aprovechamiento de los recursos.
+
+Por tanto, decir que se quiere construir un sistema siguiendo el modelo de actores, es equivalente
+a decir que se pretende constuir un sistema reactivo y distribuido.
+
 \subsection{Rol de los actores en sistemas distribuidos (y reactivos)}
 \label{sub:rol de los actores en sistemas distribuidos y reactivos}
-Lorem ipsum.
+Quiz'as, en este punto a'un no quede del todo claro por qu'e utilizar actores en sistemas distribuidos.
+Es cierto que, un sistema distribuido puede o no estar implementado utilizando actores, pero
+si que es de ayuda utilizarlos como manera de simplificar esta tarea.
+
+Los actores permiten que el sistema una vez ha procesado y actuado ante un mensaje o evento, quede
+libre para hacer cualquier otra cosa. Esa es en esencia la mayor ventaja que proporciona usar actores.
+Pero también facilitan mucho la tarea a la hora de mantener integridad y consistencia en los datos.
+
+Sin entrar en detalles, con actores se permite supervisar a otros actores de forma que se pueden
+aplicar patrones como Sagas, que ayudan a que el sistema ante un fallo no deje el estado de los datos
+de una forma inconsistente.
+
+O, por ejemplo, se puede usar para establecer un patr'on de fallo r'apido, conocido como
+Circuit Break, que ayuda a no saturar servicios ante la detecci'on de un problema de respuesta
+en el mismo.
+
 \subsection{Capacidad racional en actores}
 \label{sub:capacidad racional en actores}
-Lorem ipsum.
+Existen muchos tipos de actores, clasificados seg'un su operativa. Existen actores cuya misi'on
+es simplemente hacer de enrutador y/o balanceador. Existen otros cuya misi'on es hacer de conector y
+encerrar as'i la l'ogica de comunicaci'on con determinados servicios que usan protocolos espec'ificos.
+
+No se va a catalogar a esos actores como racionales, ya que aunque se obtiene de ellos una respuesta
+adecuada en cada momento, no aporta especial valor ya que eso mismo se podr'ia hacer con otros sistemas
+que no son considerados como modelo de agente o de actores.
+
+Sin embargo, los actores pueden utilizarse, por ejemplo, para implementar los servicios que permiten
+a una entidad financiera hacer transferencias entre clientes. En este caso, se dan dos operaciones desde
+un punto de vista muy b'asico, que son:
+
+\begin{itemize}
+	\item Retirar el importe del cliente que realiza la transferencia previa comprobaci'on
+    de que cuenta con el saldo suficiente.
+	\item Agregar dicho importe en el cliente que recibe la transferencia.
+\end{itemize}
+
+En un sistema que implemente dichos requisitos, y desarrollado con actores, deben existir los siguientes
+actores que se encarguen de realizar la tarea de permitir que se hagan las transferencias sin
+que se pierda dinero en el proceso. Tarea que por otro lado no es simple.
+
+Se necesitan, por ejemplo, de acotres que deleguen en otros tareas m'as at'omicas y se encarguen de
+supervisar que todos han ido correctamente. Tipicamente, estas tareas se desarrollan en paralelo, y si
+una tarea B que est'a asociada a otra tarea A falla, pero la tarea A no, hay que compensar la tarea A.
+
+Otro caso m'as complejo, se da en aquellas entidades que cuentan con un sistema legado que cuenta
+con l'ogica en la propia base de datos. Este caso tiene la dificultad de que ante un fallo en el patr'on
+que se acaba de describir provoca que un procedimiento de alerta en la base de datos salte
+inmediatamente, incluso aunque los actores se encarguen del problema intenando compensar.
+
+En este caso, se puede realizar implementaciones m'as complejas que consisten en grupos de actores
+permanentemente activos y divididos en regiones, de manera que se mantiene a cada actor vivo
+todo el tiempo para evitar que este tipo de problemas ocurra.
+
+En todos estos casos, los actores ejecutan tareas complejas y dan la respuesta adecuada, es decir, la
+respuesta racional en todos los casos, los de 'exitos, y tambi'en los de fallo.
+
 \section{Ventajas e Inconvenientes en el uso de actores}
 \label{sec:ventajas e inconvenientes}
-Lorem ipsum.
+Todas las ventajas del uso de actores han sido descritas a lo largo de este documento. Se enumeran las
+m'as importantes aqu'i:
+
+\begin{itemize}
+	\item Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+    dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+    anim id est laborum.
+\end{itemize}
+
+Pero, tambi'en se presentan inconvenientes en su utilizaci'on:
+
+\begin{itemize}
+    \item Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+    dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+    anim id est laborum.
+\end{itemize}
+
 \section{Conclusi'on}
 Lorem ispum.
 
