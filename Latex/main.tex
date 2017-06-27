@@ -112,7 +112,13 @@ A continuaci'on, se describe con m'as detalle qu'e es un agente, as'i como su ca
 \subsection{Qu'e es un agente}
 \label{sub:que es un agente}
 Un agente inteligente, o agente racional, es una entidad que percibe su entorno, realiza
-un precsamiento sobre dicha percepci'on, y actua en consecuencia en el mismo entorno.
+un procesamiento sobre dicha percepci'on, y actua en consecuencia en el mismo entorno.
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.6]{agente}
+\caption{Esquema de un agente.}
+\end{figure}
 
 Se dice que un agente es inteligente cuando realiza una acci'on sobre su entorno de forma racional,
 entendi'endose racional como correcta o beneficiosa. En muchas ocasiones se busca una
@@ -145,15 +151,15 @@ Dado el tipo de arquitecturas que se necesitan hoy d'ia para cumplir una serie d
 que los sistemas son altamente concurrentes, el tipo de agente que nos interesa a partir de aqu'i son los
 agentes reactivos.
 
-Dependiendo del diseño del sistema, que se describe en el siguiente cap'itulo, los actores a utilizar son
-los de tipo reactivo. Pueden incluso estar basados en modelo. Se necesita que el agente, en nuestro caso, como se ver'a
-posteriormente, un actor reactivo porque debe responder a cambios. Generalmente, no se necesitan actores que deban
+Dependiendo del dise'no del sistema, que se describe en el siguiente cap'itulo, los actores a utilizar son
+los de tipo reactivo. Pueden incluso estar basados en modelo. Se necesita que el agente, en nuestro caso, y como se ver'a
+posteriormente, sea un actor reactivo porque debe responder a cambios. Generalmente, no se necesitan actores que deban
 conseguir cumplir objetivos propios.
 
-Tambi'en cabe destacar que los actores tendr'an un comportamiento social, entendido como que un actor t'ipicamente
+Tambi'en cabe destacar que los actores tendr'an un comportamiento a menudo social, entendido como que un actor t'ipicamente
 necesitar'a de otro para completar una tarea.
 
-Pero antes de entrar en detalle con el modelo de actores, así como, el estudio de la capadidad racional de los mismos,
+Pero antes de entrar en detalle con el modelo de actores, as'i como, el estudio de la capadidad racional de los mismos,
 se presenta la capacidad racional en agentes cl'asicos.
 
 \subsection{Capacidad racional en agentes}
@@ -166,7 +172,7 @@ El objetivo es conseguir un agente que razone adecuadamente seg'un el medio en e
 \end{itemize}
 
 En el primer punto, las medidas de rendimiento de un agente pueden variar seg'un el agente, e incluso, no saber que hacer,
-engañarse a s'i mismo, etc. Deben ser adecuadas para cada tipo de agente y al entorno en el que va a actuar.
+enga'narse a s'i mismo, etc. Deben ser adecuadas para cada tipo de agente y al entorno en el que va a actuar.
 
 El segundo punto, se debe conocer en qu'e consiste la racionalidad, y en este caso la misma depende de 4 factores:
 
@@ -187,7 +193,7 @@ las aplicaciones tengan una alta capacidad de respuesta, es decir, que estas sea
 Esto se debe a que se necesita mantener la atenci'on y el inter'es de los usuarios que acceden a ellos.
 
 Las diferencias entre estos dos mundos, el mundo que conocemos hasta ahora y el que se plantea
-desde hace unos pocos a'nos, cuenta con las siguientes diferencias:
+desde hace unos pocos a'nos, cuenta con las siguientes diferencias \cite{RA-HughMcKee}:
 
 \begin{itemize}
 	\item Una 'unica computadora frente a un cluster de computadores.
@@ -207,7 +213,7 @@ de forma paralela.
 
 Esta idea puede ser llevada m'as all'a gracias a una implementaci'on adecuada de un toolkit
 que permita construir sistemas distribuidos siguiendo un modelo de actores y que a su vez
-sea fiel al manifiesto reactivo. Pero, no s'olo es una mejora, si no que se hace necesario dado
+sea fiel al manifiesto reactivo \cite{reactive-manifest}. Pero, no s'olo es una mejora, si no que se hace necesario dado
 el entorno en el que se desarrolla y se pretende ejecutar, un computador.
 
 Seguir el manifiesto reactivo ayuda a optimizar los recursos, lo que unido al modelo de actores
@@ -231,6 +237,12 @@ que es el responsable de dar paso a un actor con la entrega de un mensaje del bu
 En ese caso, el actor ejecuta la acci'on para la que est'a programado. Una vez finaliza su
 ejecuci'on, y dependiendo de la operativa, devolver'a una respuesta, o realizar'a otras acciones,
 tales como reenviar el mensaje, crear otro actor para delegar en 'el, etc.
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.3]{backpressure}
+\caption{Comunicaci'on entre agentes mediante t'ecnica de \textit{back-pressure}.}
+\end{figure}
 
 Un actor no debe guardar estados, ya que  varios hilos de ejecuci'on pasar'an por el actor,
 y en caso de que llegue un mensaje que dependa de un mensaje anterior, el actor podr'ia haber procesado
@@ -291,6 +303,12 @@ Estos principios son los siguientes:
 En este tipo de paradigma, aplicar el manifiesto reactivo se hace necesario, ya que presenta
 numerosas ventajas, como por ejemplo, mejor aprovechamiento de los recursos.
 
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.3]{reactivo}
+\caption{Relaci'on entre los cuatro principios reactivos.}
+\end{figure}
+
 Por tanto, decir que se quiere construir un sistema siguiendo el modelo de actores, es equivalente
 a decir que se pretende constuir un sistema reactivo y distribuido.
 
@@ -303,6 +321,12 @@ si que es de ayuda utilizarlos como manera de simplificar esta tarea.
 Los actores permiten que el sistema una vez ha procesado y actuado ante un mensaje o evento, quede
 libre para hacer cualquier otra cosa. Esa es en esencia la mayor ventaja que proporciona usar actores.
 Pero también facilitan mucho la tarea a la hora de mantener integridad y consistencia en los datos.
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.3]{syncvsasync}
+\caption{Ejemplo de uso de hilos eficientes en sistemas orientados a mensajer'ia frente a sistemas tradicionales.}
+\end{figure}
 
 Sin entrar en detalles, con actores se permite supervisar a otros actores de forma que se pueden
 aplicar patrones como Sagas, que ayudan a que el sistema ante un fallo no deje el estado de los datos
@@ -358,27 +382,31 @@ Todas las ventajas del uso de actores han sido descritas a lo largo de este docu
 m'as importantes aqu'i:
 
 \begin{itemize}
-	\item Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-    dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
-    anim id est laborum.
+	\item Uso eficiente de los recursos en los servidores.
+    \item Facilidad de replicaci'on de componentes, servidores y actores.
+    \item Mayor capacidad y versatilidad de evoluci'on de una plataforma al ser intercambiables los m'odulos.
+    \item Capacidad de soportar m'as concurrencia, e incluso, ser el'astico ante cambios.
 \end{itemize}
 
 Pero, tambi'en se presentan inconvenientes en su utilizaci'on:
 
 \begin{itemize}
-    \item Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-    dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
-    anim id est laborum.
+    \item Necesidad de paradigma funcional en el desarrollo de los actores para ser m'as testable.
+    \item Imposibilidad de garant'ia de transacci'on y necesidad de nuevas t'ecnicas para garantizar la integridad de los datos.
+    \item Mayor interoperabilidad e integraci'on.
 \end{itemize}
 
 \section{Conclusi'on}
-Lorem ispum.
+Este nuevo paradigma est'a siendo cada vez m'as usado en la industria tecnol'ogica, o incluso, en aquellas industrias
+que no tienen origen tecnol'ogico pero que se ven obligados a pivotar hacia dicho sector. Ofrece una soluci'on al mayor
+problema de hoy d'ia en los sistemas expuestos en Internet, dar servicio a cada vez m'as usuarios.
+
+En parte, no se ha hecho m'as que reutilizar t'ecnicas o paradigmas utilizados en otros 'areas o industrias. Como en este caso,
+que se presentan similitudes entre un modelo de agentes y un modelo de actores.
+
+En el futuro, este parece ser una de las pocas salidas donde poder avanzar y con una alta probabilidad evolucionar a'un m'as
+perfeccionando modelos y t'ecnicas ampliamente conocidas. Incluso, extendiendo su uso a sectores o campos en los que no se hace
+a'un uso de agentes o actores.
 
 % bibliography
 \printbibliography

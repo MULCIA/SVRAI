@@ -17,6 +17,48 @@
 \endgroup
 
 \sortlist[entry]{nty/global/}
+  \entry{reactive-manifest}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=JBRKMTDF}{%
+         family={Jonas\bibnamedelima Bonér},
+         family_i={J\bibinitperiod\bibinitdelim B\bibinitperiod},
+         suffix={Dave\bibnamedelima Farley},
+         suffix_i={D\bibinitperiod\bibinitdelim F\bibinitperiod},
+         given={Roland Kuhn & Martin\bibnamedelima Thompson},
+         given_i={R\bibinitperiod\bibinitdelim K\bibinitperiod \bibinitperiod
+  M\bibinitperiod\bibinitdelim T\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{JBDFRKMT1}
+    \strng{fullhash}{JBDFRKMT1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{J}
+    \field{sortinithash}{J}
+    \field{howpublished}{\url{http://www.reactivemanifesto.org/es}}
+    \field{title}{Manifiesto Reactivo}
+  \endentry
+
+  \entry{RA-HughMcKee}{book}{}
+    \name{author}{1}{}{%
+      {{hash=MH}{%
+         family={McKee},
+         family_i={M\bibinitperiod},
+         given={Hugh},
+         given_i={H\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{MH1}
+    \strng{fullhash}{MH1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \field{title}{Designing Reactive Systems: The Role of Actors in Distributed
+  Architecture}
+    \field{year}{1995}
+  \endentry
+
   \entry{AI-Russell&Norvig}{book}{}
     \name{author}{2}{}{%
       {{hash=RS}{%
@@ -45,7 +87,7 @@
   \entry{kind-of-agents}{misc}{}
     \name{author}{1}{}{%
       {{hash=W}{%
-         family={Wikipedia.},
+         family={Wikipedia},
          family_i={W\bibinitperiod},
       }}%
     }
